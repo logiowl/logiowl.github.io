@@ -1,7 +1,7 @@
 var theContainer=document.getElementById("#hotSpotContainer"),
     theHotSpot=document.getElementById("#hotSpot");
-    alert("hi");
-    fetch("./data.json")
+    
+    fetch("./assets/data.json")
     .then(response=>response.json())
     .then(data=>{
         var theData=data.hotspots;
