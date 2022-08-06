@@ -1,0 +1,7 @@
+{
+    "hotspots":[
+        {"x":10,"y":30,"link":"","text":"hello this is the text"},
+        {"x":100,"y":300,"link":"","text":"hello this is the text"}
+        
+    ]
+}

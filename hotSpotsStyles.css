@@ -1,0 +1,71 @@
+
+.container{
+    display:block;
+    width:100%;
+    height:500px;
+    background-color:rgb(223, 223, 223)
+}
+.hotSpot{
+    position:absolute;
+    display:block;
+    width:10px;
+    height:10px;
+    background-color:rgb(255, 255, 255);
+    border-radius:10px;
+    z-index: 1;
+}
+.hotSpot:hover{
+    background-color:white;
+    animation-name:pulsing;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+  
+}
+@-moz-keyframes pulsing {
+    0%
+    {
+        -moz-transform: scale(1, 1); opacity: 1;
+    }
+  
+    100%
+    {
+        -moz-transform: scale(3, 3); opacity: .0;
+    }
+}
+@-o-keyframes pulsing {
+    0%
+    {
+        -o-transform: scale(1, 1); opacity: 1;
+    }
+   
+    100%
+    {
+        -o-transform: scale(3, 3); opacity: .0;
+    }  
+}
+@-webkit-keyframes pulsing {
+    0%
+    {
+        -webkit-transform: scale(1, 1); opacity: 1;
+    }
+   
+    100%
+    {
+        -webkit-transform: scale(3, 3); opacity: .0;
+    }
+
+}
+@keyframes pulsing {
+    0%
+    {
+        transform: scale(1, 1); opacity: 1;
+    }
+    
+    100%
+    {
+        transform: scale(3, 3); opacity: .0;
+    }
+}
