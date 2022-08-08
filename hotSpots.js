@@ -45,6 +45,7 @@
      }
     
     data={
+        
         "hotspots":[
             {"x":'300px',"y":'50px',"link":"","text":"hello this is the text1", "direction":"up-left","backgroundColor":"#00aabb"},
             {"x":"500px","y":'300px',"link":"","text":"hello this is the text2",  "direction":"up-right","backgroundColor":"#ffffff"},
