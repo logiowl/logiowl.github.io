@@ -7,7 +7,7 @@
 .hotSpotComponent{
     position:absolute;
     display:block;
-    
+    visibility:hidden;
     
 }
 .hotSpotText{
@@ -25,7 +25,7 @@
     top:-40px;
     left:40px;
     z-index:1;
-    visibility:hidden;
+    
 }
 
 .hotSpotLine{
@@ -35,7 +35,7 @@
    margin-top:-59px;
     z-index:1;
     stroke-width:2;
-    visibility:hidden;
+    
     
 }
 .hotSpot{
