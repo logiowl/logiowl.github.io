@@ -4,8 +4,10 @@
      
     data={
         "hotspots":[
-            {"x":'10px',"y":'30px',"link":"","text":"hello this is the text"},
-            {"x":"500px","y":'300px',"link":"","text":"hello this is the text"}
+            {"x":'300px',"y":'50px',"link":"","text":"hello this is the text1", "direction":"up-left","backgroundColor":"#00aabb"},
+            {"x":"500px","y":'300px',"link":"","text":"hello this is the text2",  "direction":"up-right"},
+            {"x":"300px","y":'200px',"link":"","text":"hello this is the text3",  "direction":"down-right"},
+            {"x":"700px","y":'200px',"link":"","text":"hello this is the text4",  "direction":"down-left"}
         ]
     };
     var theData=data.hotspots;
@@ -17,12 +19,43 @@
             let theClonedNode=theHotSpot.cloneNode(true);    
             theClonedNode.style.left=theData[i].x;
             theClonedNode.style.top=theData[i].y;
-            theClonedNode.setAttribute("id","hotspot"+i);
+            
             let clonedNodeText=theClonedNode.querySelector("#hotSpotText");
+            let clonedNodeLine=theClonedNode.querySelector(".hotSpotLine");
+            clonedNodeLine.style.zIndex=i;
+            let clonedNodePath=theClonedNode.querySelector("path");
+            let clonedNodeCircle=theClonedNode.querySelector("circle");
+            switch (theData[i].direction){
+                case "up-left":
+                    clonedNodePath.setAttribute("d","M50 50 L40 40 L20 40");
+                    clonedNodeCircle.setAttribute("cx",50);
+                    clonedNodeText.style.left="-205px"
+                    clonedNodeLine.style.left="4px";
+
+
+                break;
+                case "down-right":
+                    clonedNodePath.setAttribute("d","M53 55 L60 70 L78 70");
+                    clonedNodeCircle.setAttribute("cx",50);
+                    clonedNodeText.style.left="37px"
+                    clonedNodeText.style.top="10px"
+                    clonedNodeLine.style.left="4px";
+                break;
+                case "down-left":
+                    clonedNodePath.setAttribute("d","M50 50 L40 40 L20 40");
+                    clonedNodeCircle.setAttribute("cx",50);
+                    clonedNodeText.style.left="-205px"
+                    clonedNodeLine.style.left="4px";
+                break;
+                case "up-right":
+                default:
+                break;
+            }
             clonedNodeText.innerText=theData[i].text;
             console.log(theClonedNode);
             theContainer.appendChild(theClonedNode);
         }
+        theHotSpot.remove();
     }
     // fetch("./assets/data.json")
     // .then(response=>response.json())
