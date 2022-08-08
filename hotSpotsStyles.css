@@ -12,36 +12,42 @@
     
 }
 .hotSpotText{
-    background-color:rgb(20,20,20);
-    padding:10px;
+    position:absolute;
+    background-color:#7a0d03;
+    
     opacity:.7;
-    border:solid 2px white;
+    
     color:white;
     width:150px;
+    
+    height:15px;
+    padding:10px;
+    border: 3px solid white;
+    top:-40px;
+    left:40px;
+    z-index:1;
 }
 
-.hotSpotText:after {
-	content: '';
-	position: absolute;
-	left: 0;
-	top: 50%;
-	width: 0;
-	height: 0;
-	border: 35px solid transparent;
-	border-right-color: #00aabb;
-	border-left: 0;
-	border-bottom: 0;
-	margin-top: -17.5px;
-	margin-left: -35px;
+.hotSpotLine{
+    position:relative;
+   width:100%;
+   margin-left:-59px;
+   margin-top:-59px;
+    z-index:1;
+    stroke-width:2;
+    
 }
 .hotSpot{
-    position:relative;
+    position:absolute;
     display:block;
     width:10px;
     height:10px;
-    background-color:rgb(255, 255, 255);
+    background-color:rgba(253, 253, 253, 0);
     border-radius:10px;
-    z-index: 1;
+    z-index:99;
+   
+    
+    
 }
 .hotSpot:hover{
     background-color:white;
@@ -56,33 +62,39 @@
 @-moz-keyframes pulsing {
     0%
     {
+        background-color:red;
         -moz-transform: scale(1, 1); opacity: 1;
     }
   
     100%
     {
+       
         -moz-transform: scale(3, 3); opacity: .0;
     }
 }
 @-o-keyframes pulsing {
     0%
     {
+        background-color:red;
         -o-transform: scale(1, 1); opacity: 1;
     }
    
     100%
     {
+        
         -o-transform: scale(3, 3); opacity: .0;
     }  
 }
 @-webkit-keyframes pulsing {
     0%
     {
+        background-color:red;
         -webkit-transform: scale(1, 1); opacity: 1;
     }
    
     100%
     {
+        
         -webkit-transform: scale(3, 3); opacity: .0;
     }
 
@@ -90,11 +102,13 @@
 @keyframes pulsing {
     0%
     {
+        background-color:red;
         transform: scale(1, 1); opacity: 1;
     }
     
     100%
     {
+        
         transform: scale(3, 3); opacity: .0;
     }
 }
