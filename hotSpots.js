@@ -13,6 +13,7 @@
         
         let outlinesPath=theHotSpotLabel.querySelector("path");
         let outlinesCircle=theHotSpotLabel.querySelector("circle");
+        outlinesCircle.setAttribute("fill",theData[i].backgroundColor)
         theHotSpotLabel.style.left=theData[i].x;
         theHotSpotLabel.style.top=theData[i].y;
         switch (theData[i].direction){
