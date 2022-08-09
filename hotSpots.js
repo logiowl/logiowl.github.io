@@ -1,5 +1,5 @@
 
-     var theContainer=document.getElementById("hotSpotContainer"),
+    var theContainer=document.getElementById("hotSpotContainer"),
      theHotSpot=document.getElementById("hotSpot");
      theHotSpotLabel=document.getElementById("hotSpotComponent");
     var handleClick=(event)=>{
@@ -15,8 +15,7 @@
         let outlinesPath=theHotSpotLabel.querySelector("path");
         let outlinesCircle=theHotSpotLabel.querySelector("circle");
         outlinesCircle.setAttribute("fill",theData[i].backgroundColor)
-        theHotSpotLabel.style.left=theData[i].x;
-        theHotSpotLabel.style.top=theData[i].y;
+        
         switch (theData[i].direction){
             case "up-left":
                 outlinesPath.setAttribute("d","M50 50 L40 40 L20 40");
@@ -43,6 +42,8 @@
             default:
             break;
         }
+        theHotSpotLabel.style.left=theData[i].x;
+        theHotSpotLabel.style.top=theData[i].y;
         theHotSpotLabel.style.visibility="visible";
      }
     
