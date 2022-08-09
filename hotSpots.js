@@ -9,6 +9,7 @@
         let hotSpotText=theHotSpotLabel.querySelector("#hotSpotText");
         hotSpotText.style.backgroundColor=theData[i].backgroundColor; 
         hotSpotText.innerHTML=theData[i].text;
+        hotSpotText.style.color=theData[i].textColor;
         let labelOutlines=theHotSpotLabel.querySelector(".hotSpotLine");
         
         let outlinesPath=theHotSpotLabel.querySelector("path");
@@ -32,7 +33,7 @@
                 labelOutlines.style.left="4px";
             break;
             case "down-left":
-            outlinesPath.setAttribute("d","M50 50 L40 40 L20 40");
+                outlinesPath.setAttribute("d","M50 50 L40 40 L20 40");
                 outlinesCircle.setAttribute("cx",50);
                 hotSpotText.style.left="-205px"
                 hotSpotText.style.top="-40px"
@@ -48,10 +49,10 @@
     data={
         
         "hotspots":[
-            {"x":'300px',"y":'50px',"link":"","text":"hello this is the text1", "direction":"up-left","backgroundColor":"#00aabb"},
-            {"x":"500px","y":'300px',"link":"","text":"hello this is the text2",  "direction":"up-right","backgroundColor":"#ffffff"},
-            {"x":"300px","y":'200px',"link":"","text":"hello this is the text3",  "direction":"down-right","backgroundColor":"#ffff00"},
-            {"x":"700px","y":'200px',"link":"","text":"hello this is the text4",  "direction":"down-left","backgroundColor":"#00aabb"}
+            {"x":'300px',"y":'50px',"link":"","text":"hello this is the text1", "direction":"up-left","backgroundColor":"#00aabb","textColor":"black"},
+            {"x":"500px","y":'300px',"link":"","text":"hello this is the text2",  "direction":"up-right","backgroundColor":"#ffffff","textColor":"black"},
+            {"x":"300px","y":'200px',"link":"","text":"hello this is the text3",  "direction":"down-right","backgroundColor":"#ffff00","textColor":"white"},
+            {"x":"700px","y":'200px',"link":"","text":"hello this is the text4",  "direction":"down-left","backgroundColor":"#00aabb","textColor":"white"}
         ]
     };
     var theData=data.hotspots;
