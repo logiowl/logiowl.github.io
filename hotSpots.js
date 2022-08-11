@@ -23,16 +23,20 @@
         switch (theData[i].direction){
             case "up-left":
                 hotspotTextTitle.style.borderRadius="10px 0 0 0"
-                
+                hotspotHandle.setAttribute("class","hotspotHandle");
             break;
             case "down-right":
                 hotspotTextTitle.style.borderRadius="0 0 10px 0"
+                hotspotHandle.setAttribute("class","hotspotHandle hFlip Vflip");
+                
             break;
             case "down-left":
                 hotspotTextTitle.style.borderRadius="0 0 0 10px"
+                hotspotHandle.setAttribute("class","hotspotHandle Vflip");
             break;
             case "up-right":
                 hotspotTextTitle.style.borderRadius="0 10px 0 0"
+                hotspotHandle.setAttribute("class","hotspotHandle hFlip");
             default:
             break;
         }
