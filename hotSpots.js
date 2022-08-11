@@ -2,46 +2,43 @@
     var theContainer=document.getElementById("hotspotContainer"),
      thehotspot=document.getElementById("hotspot");
      thehotspotComponent=document.getElementById("hotspotComponent");
-    var handleClick=(event)=>{
-
+    var handleHotspotClick=(event)=>{
     
-        i=parseInt (event.target.getAttribute("number"));
+    
+        hotspotNumber=parseInt (event.target.getAttribute("number"));
         let hotspotTextTitle=thehotspotComponent.querySelector("#hotspotTextTitle");
         let hotspotTextBody=thehotspotComponent.querySelector("#hotspotTextBody");
-        hotspotTextTitle.style.backgroundColor=theData[i].backgroundColor; 
-        hotspotTextTitle.innerHTML=theData[i].textTitle;
-        if (theData[i].textBody && theData[i].textBody.length>0) {
-            hotspotTextBody.innerHTML=theData[i].textBody;
+        hotspotTextTitle.style.backgroundColor=theData[hotspotNumber].backgroundColor; 
+        hotspotTextTitle.innerHTML=theData[hotspotNumber].textTitle;
+        if (theData[hotspotNumber].link && theData[hotspotNumber].link.length>0) hotspotTextTitle.onclick=()=>{ window.location.href=theData[hotspotNumber].link};
+        if (theData[hotspotNumber].textBody && theData[hotspotNumber].textBody.length>0) {
+            hotspotTextBody.innerHTML=theData[hotspotNumber].textBody;
             hotspotTextBody.style.visibility="visible";
             }
             else{
                 hotspotTextBody.style.visibility="hidden";
             }
-        hotspotTextTitle.style.color=theData[i].textColor;
+        hotspotTextTitle.style.color=theData[hotspotNumber].textColor;
         let hotspotHandle=thehotspotComponent.querySelector(".hotspotHandle");
         
-        switch (theData[i].direction){
-            case "up-left":
-                hotspotTextTitle.style.borderRadius="10px 0 0 0"
+        switch (theData[hotspotNumber].direction){
+            case "left":
+                hotspotTextTitle.style.borderRadius="0 10px 0 0";
                 hotspotHandle.setAttribute("class","hotspotHandle");
+                hotspotTextTitle.style.left=hotspotTextBody.style.left="-275px";
+                hotspotHandle.style.left="-78px"
             break;
-            case "down-right":
-                hotspotTextTitle.style.borderRadius="0 0 10px 0"
-                hotspotHandle.setAttribute("class","hotspotHandle hFlip Vflip");
-                
-            break;
-            case "down-left":
-                hotspotTextTitle.style.borderRadius="0 0 0 10px"
-                hotspotHandle.setAttribute("class","hotspotHandle Vflip");
-            break;
-            case "up-right":
-                hotspotTextTitle.style.borderRadius="0 10px 0 0"
+        
+            case "right":
+                hotspotTextTitle.style.borderRadius="10px 0 0 0"
                 hotspotHandle.setAttribute("class","hotspotHandle hFlip");
+                hotspotTextTitle.style.left=hotspotTextBody.style.left="95px";
+                hotspotHandle.style.left="-5px"
             default:
             break;
         }
-        thehotspotComponent.style.left=theData[i].x;
-        thehotspotComponent.style.top=theData[i].y;
+        thehotspotComponent.style.left=theData[hotspotNumber].x;
+        thehotspotComponent.style.top=theData[hotspotNumber].y;
         thehotspotComponent.style.visibility="visible";
      }
     
@@ -57,7 +54,7 @@
             theClonedNode.setAttribute("id","hotspot"+i);   
             theClonedNode.style.left=theData[i].x;
             theClonedNode.style.top=theData[i].y;
-            theClonedNode.addEventListener("click",handleClick)
+            theClonedNode.addEventListener("click",handleHotspotClick)
             theContainer.appendChild(theClonedNode);
         }   
         thehotspot.remove(); 
