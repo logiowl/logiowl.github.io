@@ -77,7 +77,9 @@
         theContainer.style.height=theSubjectImage.style.height
     }
     window.onload=()=>{
-       
+        theSubjectImage.setAttribute("src",data.theSubjectImage);
+        theSubjectImage.addEventListener("load",()=>{handleResize();})
+        
         var sizeRateToOriginal=theSubjectImage.width/theSubjectImage.naturalWidth   
         for(let i=0;i<theData.length;i++){       
             let theClonedNode=thehotspot.cloneNode(true); 
@@ -95,10 +97,10 @@
            
         }   
         thehotspot.remove(); 
-        theSubjectImage.setAttribute("src",data.theSubjectImage);
-        window.addEventListener('resize',handleResize)
-        theContainer.style.height=theSubjectImage.style.height;
         handleResize();
+        window.addEventListener('resize',handleResize)
+        
+       
      }
  
     
